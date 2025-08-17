@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advaith | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: #121212; color: #fff; scroll-behavior: smooth;}
+    a { color: #00aaff; text-decoration: none; }
+    section { padding: 100px 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    h1, h2 { margin-bottom: 20px; }
+    p { max-width: 600px; text-align: center; margin-bottom: 20px; line-height: 1.6; }
+    
+    /* Hero */
+    #hero { background: linear-gradient(135deg,#1f1f1f,#2c2c2c); }
+    #hero h1 { font-size: 4rem; }
+    #hero p { font-size: 1.5rem; color: #aaa; }
+
+    /* Sections */
+    .section-title { font-size: 2.5rem; margin-bottom: 20px; }
+    .section-subtitle { font-size: 1.2rem; color: #aaa; margin-bottom: 40px; }
+
+    /* Skills */
+    .skills-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .skill { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; transition: transform 0.3s; }
+    .skill:hover { transform: translateY(-10px); }
+
+    /* Projects */
+    .projects-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+    .project-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; width: 250px; transition: transform 0.3s; }
+    .project-card:hover { transform: translateY(-10px); }
+
+    /* Experience / Achievements */
+    .badge-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+    .badge-iframe { border: none; border-radius: 10px; }
+
+    /* Contact */
+    .contact-links { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
+    .contact-links a { font-size: 1.5rem; }
+
+    /* Simple fade-in animation */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <h1 class="fade-in">Hi, I'm Advaith</h1>
+    <p class="fade-in">Ethical Hacker | Python Developer | Tech Explorer</p>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2 class="section-title fade-in">About Me</h2>
+    <p class="fade-in">I’m Advaith, a cybersecurity enthusiast and Python developer. I love exploring systems, learning new tech, and building projects that challenge my skills.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title fade-in">Skills</h2>
+    <div class="skills-container fade-in">
+      <div class="skill">Python</div>
+      <div class="skill">Linux</div>
+      <div class="skill">Networking</div>
+      <div class="skill">TryHackMe</div>
+      <div class="skill">Bash Scripting</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title fade-in">Projects</h2>
+    <div class="projects-container fade-in">
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Short description about the project, tools used, and purpose.</p>
+        <a href="#">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Project 2</h3>
+        <p>Short description about the project, tools used, and purpose.</p>
+        <a href="#">View on GitHub</a>
+      </div>
+      <!-- Add more projects here -->
+    </div>
+  </section>
+
+  <!-- Experience / Achievements -->
+  <section id="experience">
+    <h2 class="section-title fade-in">Achievements</h2>
+    <p class="section-subtitle fade-in">Some highlights of my cybersecurity journey</p>
+    <div class="badge-container fade-in">
+      <iframe class="badge-iframe" src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=4779203" width="300" height="400" title="TryHackMe Badge"></iframe>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title fade-in">Contact</h2>
+    <p class="fade-in">Feel free to reach out or follow me on these platforms:</p>
+    <div class="contact-links fade-in">
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+      <a href="mailto:yourmail@example.com">Email</a>
+    </div>
+  </section>
+
+  <!-- JS for fade-in on scroll -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
+
+</body>
+</html>
