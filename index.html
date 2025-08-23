@@ -13,6 +13,28 @@
     section { padding: 100px 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     h1, h2 { margin-bottom: 20px; }
     p { max-width: 600px; text-align: center; margin-bottom: 20px; line-height: 1.6; }
+    /* Achievements Styling */
+.badge-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.badge-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.badge-iframe {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
     
     /* Hero */
     #hero { background: linear-gradient(135deg,#1f1f1f,#2c2c2c); }
